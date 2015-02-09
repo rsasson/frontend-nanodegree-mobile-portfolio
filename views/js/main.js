@@ -444,9 +444,9 @@ var determineDx = function(elem, size, windowwidth) {
 var changePizzaSizes = function(size) {
   var pizzaElements = document.querySelectorAll(".randomPizzaContainer");
   var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
+  var dx = determineDx(pizzaElements[0], size, windowwidth);
+  var newwidth = (pizzaElements[0].offsetWidth + dx) + 'px';
   for (var i = 0; i < pizzaElements.length; i++) {
-    var dx = determineDx(pizzaElements[i], size, windowwidth);
-    var newwidth = (pizzaElements[i].offsetWidth + dx) + 'px';
     pizzaElements[i].style.width = newwidth;
   }
 }
